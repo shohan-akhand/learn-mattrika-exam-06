@@ -7,8 +7,13 @@ router.get("/", (req, res, next) => {
   });
 });
 router.post("/", (req, res, next) => {
+  const team = {
+    teamId: req.body.teamId,
+    country: req.body.country,
+  };
   res.status(201).json({
     message: "Create a team",
+    createdTeam: team,
   });
 });
 

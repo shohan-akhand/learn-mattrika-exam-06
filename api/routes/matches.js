@@ -7,8 +7,16 @@ router.get("/", (req, res, next) => {
   });
 });
 router.post("/", (req, res, next) => {
+  const match = {
+    matchId: req.body.matchId,
+    teamAId: req.body.teamAId,
+    teamBId: req.body.teamBId,
+    venue: req.body.venue,
+  };
+
   res.status(201).json({
     message: "create a match",
+    createdMatch: match,
   });
 });
 
